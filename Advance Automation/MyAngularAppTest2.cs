@@ -23,22 +23,25 @@ namespace Advance_Automation
                   );
                 var regTitle = driver.PageSource.Contains("Register");
                 Assert.IsTrue(regTitle);
-                driver.FindElementById("username").SendKeys("Test");
-                //driver.FindElementById("useremail").SendKeys("de");
+               /* driver.FindElementById("username").SendKeys("Test");
+                driver.FindElementById("useremail").SendKeys("def@gmail.com");
                 driver.FindElementById("userpassword").SendKeys("123456789");
-                driver.FindElementById("userpassword2").SendKeys("12356789");
+                driver.FindElementById("userpassword2").SendKeys("12356789");*/
                 driver.FindElementById("regbtn").Click();
                 if(driver.FindElementById("result").Text=="Registered")
                 {
+                    System.Threading.Thread.Sleep(5000);
                     driver.Navigate().GoToUrl("http://localhost:4200/Portfolio-Angular/");
+                    System.Threading.Thread.Sleep(5000);
                 }
                 else
                 {
-                    new WebDriverWait(driver, TimeSpan.FromSeconds(20)).Until(
-               d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete")
-               );
+                    System.Threading.Thread.Sleep(5000);
+                    driver.Navigate().GoToUrl("http://localhost:4200/Portfolio-Angular/Register");
+                    System.Threading.Thread.Sleep(5000);
                 }
             }
         }
+        
     }
 }
