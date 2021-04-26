@@ -60,7 +60,6 @@
     <Compile Include="AboutUsPOMTest.cs" />
     <Compile Include="IFrameTest.cs" />
     <Compile Include="MyAngularApp.cs" />
-    <Compile Include="MyAngularAppTest.cs" />
     <Compile Include="MyAngularAppTest2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -24,7 +24,7 @@ namespace Advance_Automation
                 var regTitle = driver.PageSource.Contains("Register");
                 Assert.IsTrue(regTitle);
                 driver.FindElementById("username").SendKeys("Test");
-                driver.FindElementById("useremail").SendKeys("def@gmail.com");
+                //driver.FindElementById("useremail").SendKeys("de");
                 driver.FindElementById("userpassword").SendKeys("123456789");
                 driver.FindElementById("userpassword2").SendKeys("12356789");
                 driver.FindElementById("regbtn").Click();
@@ -33,11 +33,10 @@ namespace Advance_Automation
                     driver.Navigate().GoToUrl("http://localhost:4200/Portfolio-Angular/");
                 }
                 else
-                {/*
+                {
                     new WebDriverWait(driver, TimeSpan.FromSeconds(20)).Until(
-                d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete")
-                );*/
-                    driver.Navigate().GoToUrl("http://localhost:4200/Portfolio-Angular/Register");
+               d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete")
+               );
                 }
             }
         }
