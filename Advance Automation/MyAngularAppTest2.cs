@@ -32,7 +32,13 @@ namespace Advance_Automation
                 {
                     driver.Navigate().GoToUrl("http://localhost:4200/Portfolio-Angular/");
                 }
-               
+                else
+                {/*
+                    new WebDriverWait(driver, TimeSpan.FromSeconds(20)).Until(
+                d => ((IJavaScriptExecutor)d).ExecuteScript("return document.readyState").Equals("complete")
+                );*/
+                    driver.Navigate().GoToUrl("http://localhost:4200/Portfolio-Angular/Register");
+                }
             }
         }
     }
